@@ -1,0 +1,356 @@
+/* variable declarations */
+:root {
+    --myapp-color-background: white;
+    --myapp-default-background: #ffffff; /* Default Background color -> main */
+    --myapp-header-heigth: 60px;
+    --myapp-footer-heigth: 50px;
+    --myapp-default-font: #000000; /* Default Font: Black */
+    --myapp-default-space: 10px;
+    --myapp-imgbutton-size: 40px; /* Width, Height of (Image)-Button */
+    --myapp-imagebutton-imgsize: 25px; /* Width, Height of Image */
+    --myapp-headerBorderBottom: 2px;
+    --myapp-footerBorderTop: 2px;
+    --myapp-li-height: 70px;
+    --myapp-li-img-size: 70px;
+}
+
+html, body {
+    background-color: var(--myapp-color-background); /* gruene Wiese */
+    margin: 0;
+    font-family: "Avenir Medium", sans-serif;
+    color: var(--myapp-default-font);
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
+/* block text selection */
+* {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Header area */
+header {
+    height: var(--myapp-header-heigth);
+    background-color: #ffffff;
+    border-bottom: 2px solid #c8c8c8;
+}
+
+/* Footer area */
+footer {
+    height: var(--myapp-footer-heigth);
+    background-color: #ffffff;
+    border-top: var(--myapp-footerBorderTop) solid #ff701e; /* Trennlinie */
+}
+
+/* Main area */
+main {
+    /* padding: var(--myapp-default-space); */
+    height: calc(100% - ((var(--myapp-header-heigth) + var(--myapp-headerBorderBottom)) + (var(--myapp-footer-heigth) + var(--myapp-footerBorderTop))));
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: var(--myapp-default-background);
+    box-sizing: border-box;
+}
+
+/* list view */
+main ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+main li {
+    /* font-size: 20pt; */
+    height: var(--myapp-li-height);
+    border-bottom: 1px solid #cecece;
+    /* line-height: 60px; */
+    padding-left: var(--myapp-default-space);
+}
+
+h2 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 20pt;
+    height: var(--myapp-li-height);
+    line-height: var(--myapp-li-height);
+    display: inline-block;
+}
+
+.imgbutton-dots {
+    background-image: url("./img/glyphicons/png/glyphicons-518-option-vertical.png");
+}
+
+.imgbtn-tag {
+    background-image: url("./img/glyphicons/png/glyphicons-174-play.png");
+}
+
+li .imgbutton {
+    /*margin-top: calc((var(--myapp-li-height) - var(--myapp-imgbutton-size)) / 2);*/
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* img elements in li */
+li img {
+    width: var(--myapp-li-img-size);
+    height: var(--myapp-li-img-size);
+    margin-top: calc((var(--myapp-li-height) - var(--myapp-li-img-size)) / 2);
+    margin-right: var(--myapp-default-space);
+
+    /* Bildentzerrung mit object-fit: cover; */
+    object-fit: cover;
+}
+
+.align-left {
+    float: left;
+}
+
+/* Image positioning: left */
+.align-right {
+    float: right;
+}
+
+/* Setzen der Image Klasse zur Vererbung der Icons (.menu, .add) */
+.imgbutton {
+    background-color: transparent;
+    border: none;
+    font-size: 0;
+    height: var(--myapp-imgbutton-size);
+    width: var(--myapp-imgbutton-size);
+
+    /* Anpassung der Farbe der Icons -> CSS Filterfunktion */
+    filter: invert(60%);
+    -webkit-filter: invert(60%);
+    background-repeat: no-repeat;
+    background-position: center;
+    /*background-size: var(--myapp-imagebutton-imgsize) var(--myapp-imagebutton-imgsize);*/
+}
+
+.imgbtn-tag, .imgbutton-dots {
+    width: 20px;
+    height: 20px;
+}
+
+.imgbtn-tag {
+    margin-top: var(--myapp-default-space) !important;
+}
+
+/* Sandwich Icon */
+.imgbutton-menu {
+    background-image: url("./img/glyphicons/png/glyphicons-517-menu-hamburger.png");
+}
+
+/* Kachel view Icon */
+.imgbutton-thumbnail {
+    background-image: url("./img/glyphicons/png/glyphicons-157-show-thumbnails.png");
+}
+
+/* List view Icon */
+.imgbutton-thumbnail1 {
+    background-image: url("./img/glyphicons/png/glyphicons-115-list.png");
+}
+
+/* Plus Icon */
+.imgbutton-add {
+    background-image: url("./img/glyphicons/png/glyphicons-433-plus.png");
+}
+
+/* Refresh Icon */
+.imgbutton-refesh {
+    background-image: url("./img/glyphicons/png/glyphicons-82-refresh.png");
+}
+
+/* Logout Icon */
+.imgbutton-logout {
+    background-image: url("./img/glyphicons/png/glyphicons-388-log-out.png");
+}
+
+/* Center Buttons vertically -> Header */
+header .imgbutton {
+    margin-top: calc((var(--myapp-header-heigth) - var(--myapp-imgbutton-size)) / 2);
+}
+
+/* Center Buttons vertically -> Footer */
+footer .imgbutton {
+    margin-top: calc((var(--myapp-footer-heigth) - var(--myapp-imgbutton-size)) / 2);
+}
+
+/* Styling Headline -> header details */
+h1 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 22pt;
+    line-height: var(--myapp-header-heigth);
+    display: inline-block;
+    padding-left: 15px;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+
+    /* Automatische Anpassung der Zellen an die Browser Fenstergroesse */
+    grid-template-columns: calc(var(--myapp-default-space) * 3) 1fr repeat(2, auto);
+    gap: 5px 0px;
+    grid-template-areas: "gHeader gHeader dateTime" "mainTitle mainTitle mainTitle" "playBtn tagNumber dotsBtn";
+}
+
+/* Grid Item with guidelines */
+.gridHeader {
+    grid-area: gHeader;
+    /*padding-top: 3px;*/
+}
+
+.gridDateTime {
+    grid-area: dateTime;
+    text-align: right;
+    padding-right: 10px;
+    /*padding-top: 3px;*/
+}
+
+.gridMainTitle {
+    grid-area: mainTitle;
+}
+
+.gridPlayBtn {
+    grid-area: playBtn;
+}
+
+.gridTagNumber {
+    grid-area: tagNumber;
+    padding-top: 2px;
+}
+
+.gridDotsBtn {
+    grid-area: dotsBtn;
+    padding-right: 5px;
+    padding-top: 15px;
+}
+
+.tiles .gridDotsBtn {
+    padding-top: 0;
+    padding-right: 0;
+}
+
+/* Grid Styling */
+.grid-container {
+    font-size: 10pt;
+    font-weight: normal;
+}
+
+.gridHeader, .gridDateTime, .gridTagNumber {
+    color: #bfbfbf;
+}
+
+p {
+    margin: 0;
+}
+
+/* Geschwisterelement: Anpassung des Puffers unter main > ul und
+   anschliessender Verschiebung des <li> elements (Bilder, Text) unter ul > li */
+main > ul {
+    background-color: #dcdcdc;
+    height: var(--myapp-default-space);
+}
+
+ul > li {
+    padding-top: calc(var(--myapp-default-space) * 2);
+    padding-bottom: var(--myapp-default-space);
+}
+
+/* Tag Number, Orientierung an der oberen Linie des Options-Icons (Naeherungswert) */
+.gridTagNumber {
+    line-height: 40px;
+}
+
+/************************************* Kachelansicht *************************************/
+/* Elemente (Bilder, Text, Buttons) in <li> loeschen */
+.tiles li .gridHeader,
+.tiles li .gridDateTime,
+.tiles li .gridMainTitle,
+.tiles li .gridPlayBtn,
+.tiles li .gridTagNumber {
+    display: none;
+}
+
+/* Borderlinien innerhalb <li> loeschen */
+.tiles li {
+    /* margin-top: var(--myapp-default-space); */
+    --myapp-tiles-per-line: 4;
+    --myapp-tiles-size: calc((100vw - (2 * var(--myapp-default-space)) - (var(--myapp-tiles-per-line) - 1) * 6px) / var(--myapp-tiles-per-line));
+    display: inline-block;
+    border-bottom: none;
+    width: var(--myapp-tiles-size);
+    height: var(--myapp-tiles-size);
+    padding: 0;
+    margin-left: var(--myapp-default-space);
+    margin-bottom: var(--myapp-default-space);
+    position: relative;
+}
+
+/* Kachelansicht Button */
+.tiles li .grid-container {
+    top: 70px;
+    right: 0;
+    position: absolute;
+}
+
+.tiles li img {
+    display: inline-block;
+    margin-top: calc(var(--myapp-default-space) * 2);
+    margin-right: calc(var(--myapp-default-space) * 2); /* grob ausgerichtete horizontale Zentrierung */
+    margin-left: calc(var(--myapp-default-space) * 2); /* grob ausgerichtete horizontale Zentrierung */
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
+.tiles .imgbutton-dots {
+    position: absolute;
+    -webkit-filter: invert(90%);
+    filter: invert(90%);
+}
+
+/* Anzahl der Kacheln in Abhaengigkeit der min-width
+   Groesse des Device Bildschirms */
+@media (min-width: 500px) {
+    .tiles li {
+        --myapp-tiles-per-line: 5;
+    }
+}
+
+@media (min-width: 600px) {
+    .tiles li {
+        --myapp-tiles-per-line: 7;
+    }
+}
+
+@media (min-width: 768px) {
+    .tiles li {
+        --myapp-tiles-per-line: 9;
+    }
+}
+
+@media (min-width: 1000px) {
+    .tiles li {
+        --myapp-tiles-per-line: 15;
+    }
+}
+
+/* JSL */
+/* faded in/out */
+main.faded {
+    opacity: 0.0;
+    transition: opacity 2s;
+}
+
+main {
+    opacity: 1.0;
+    transition: opacity 1s;
+}
